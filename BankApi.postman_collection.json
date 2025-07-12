@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "1b2732ee-9e6b-44d9-99d9-08392b825c70",
+		"name": "BankApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27687708"
+	},
+	"item": [
+		{
+			"name": "CrearCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\": \"Juanita\",\r\n    \"cardId\":\"0801200105567\",\r\n    \"birthdate\": \"1995-04-12\",\r\n    \"gender\": \"F\",\r\n    \"income\": 223300\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5268/api/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "5268",
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerNumber\": \"0801200105567\", \r\n  \"accountBalance\": 1500.75,\r\n  \"accountTypeId\": 2,\r\n  \"creationDate\": \"2025-07-10\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5268/api/BankAccount",
+					"host": [
+						"localhost"
+					],
+					"port": "5268",
+					"path": [
+						"api",
+						"BankAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearDeposito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountNumber\": 202990, \r\n  \"transactionAmmount\": 500.00\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5268/api/accountHistory/deposito",
+					"host": [
+						"localhost"
+					],
+					"port": "5268",
+					"path": [
+						"api",
+						"accountHistory",
+						"deposito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultaSaldo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5268/api/BankAccount/202990",
+					"host": [
+						"localhost"
+					],
+					"port": "5268",
+					"path": [
+						"api",
+						"BankAccount",
+						"202990"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HistorialTransacciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5268/api/accountHistory/history/202990",
+					"host": [
+						"localhost"
+					],
+					"port": "5268",
+					"path": [
+						"api",
+						"accountHistory",
+						"history",
+						"202990"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearRetiro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountNumber\": 202990, \r\n  \"transactionAmmount\": 200.00\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5268/api/accountHistory/retiro",
+					"host": [
+						"localhost"
+					],
+					"port": "5268",
+					"path": [
+						"api",
+						"accountHistory",
+						"retiro"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
